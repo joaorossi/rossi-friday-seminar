@@ -59,6 +59,7 @@ vec2 circleAround(float t)
     return 5.0 * vec2(cos(t), sin(t));
 }
 
+// Just 3 sines overlapped to create a wobble motion
 float sineWobble(float t, float f0, float f1, float f2)
 {
     float t0 = mod(t * f0, TWO_PI);
@@ -72,7 +73,6 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord)
 {
     vec2 uv = fragCoord / iResolution.xy;
     uv.x *= iResolution.x / iResolution.y;
-    
     vec2 pos = uv + circleAround(iTime);
 
     float freq0 = 1.75 + 0.25 * sineWobble(iTime, 0.121, 0.909, 0.523);
