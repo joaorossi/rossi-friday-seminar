@@ -56,5 +56,5 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord)
     // Basic texture with noise using the new polar-mapped UV
     float c = fbm(polarUV * 5.0, 2.0, 0.2);
 
-    fragColor = vec4(vec3(c), 1.0);
+    fragColor = vec4(pow(vec3(c), vec3(0.4545)), 1.0);
 }
