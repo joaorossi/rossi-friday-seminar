@@ -19,7 +19,7 @@ float sdTorus(vec3 p, vec2 t)
 
 // Signed Distance Function (SDF)
 // Returns the distance from point p to the closest point in the scene
-float SDF(in vec3 p)
+float SDF(vec3 p)
 {
     return sdTorus(p, vec2(0.6, 0.1));
 }
